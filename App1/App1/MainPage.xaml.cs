@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
@@ -46,6 +37,16 @@ namespace App1
             this.gv_1.ItemsSource = new ObservableCollection<DragItemViewModel>(colors);
 
             this.gv_top.ItemsSource = new ObservableCollection<DragItemViewModel>(colors);
+        }
+
+        private void AppBar_Closed(object sender, object e)
+        {
+            this.app_bg.Visibility = Visibility.Collapsed;
+        }
+
+        private void AppBar_Opened(object sender, object e)
+        {
+            this.app_bg.Visibility = Visibility.Visible;
         }
     }
 

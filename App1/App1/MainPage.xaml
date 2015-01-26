@@ -8,8 +8,8 @@
     mc:Ignorable="d">
 
     <Page.TopAppBar>
-        <AppBar>
-            <GridView x:Name="gv_top" Background="Gray" Height="135" VerticalAlignment="Center" SelectionMode="None" ScrollViewer.HorizontalScrollBarVisibility="Hidden" CanDragItems="True">
+        <AppBar Background="Transparent" BorderBrush="Transparent" Closed="AppBar_Closed" Opened="AppBar_Opened">
+            <GridView x:Name="gv_top" Height="135" VerticalAlignment="Center" SelectionMode="None" ScrollViewer.HorizontalScrollBarVisibility="Hidden" CanDragItems="True">
                 <GridView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
@@ -23,6 +23,7 @@
     </Page.TopAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Rectangle x:Name="app_bg" Visibility="Collapsed" Height="139" Fill="Gray" VerticalAlignment="Top" />
         <GridView x:Name="gv_1" Background="Gray" Height="135" VerticalAlignment="Center" SelectionMode="None" ScrollViewer.HorizontalScrollBarVisibility="Hidden" CanDragItems="True">
             <GridView.ItemTemplate>
                 <DataTemplate>
