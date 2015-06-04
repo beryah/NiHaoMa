@@ -1,0 +1,8 @@
+﻿<Window x:Class="NotifyPropertyChangedWithoutCallerMemberName.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+  <Grid>
+    <TextBlock Text="{Binding TextXX}" FontSize="33" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  </Grid>
+</Window>
