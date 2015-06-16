@@ -7,13 +7,24 @@
     <Grid DockPanel.Dock="Top">
       <Button Content="Print!!" Width="70" Height="30" Margin="10" Click="Button_Click" />
     </Grid>
-    <DataGrid x:Name="dataGrid1" ItemsSource="{Binding ItemsSource}" IsReadOnly="True" AutoGenerateColumns="False" SelectionUnit="FullRow" >
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
-        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-        <DataGridTextColumn Header="Amt" Binding="{Binding Amt, StringFormat=0.00}" />
-        <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=yyyy/MM/dd}" />
-      </DataGrid.Columns>
-    </DataGrid>
+    <ScrollViewer>
+      <DataGrid x:Name="dataGrid1" ItemsSource="{Binding ItemsSource}" IsReadOnly="True" AutoGenerateColumns="False" SelectionUnit="FullRow">
+        <DataGrid.GroupStyle>
+          <GroupStyle>
+            <GroupStyle.HeaderTemplate>
+              <DataTemplate>
+                <TextBlock Text="AAAA" />
+              </DataTemplate>
+            </GroupStyle.HeaderTemplate>
+          </GroupStyle>
+        </DataGrid.GroupStyle>
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+          <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+          <DataGridTextColumn Header="Amt" Binding="{Binding Amt, StringFormat=0.00}" />
+          <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=yyyy/MM/dd}" />
+        </DataGrid.Columns>
+      </DataGrid>
+    </ScrollViewer>
   </DockPanel>
 </Window>
