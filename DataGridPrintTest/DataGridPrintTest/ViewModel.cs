@@ -9,9 +9,9 @@ namespace DataGridPrintTest
   {
     #region ItemsSource
 
-    private object _ItemsSource;
+    private List<Item> _ItemsSource;
 
-    public object ItemsSource
+    public List<Item> ItemsSource
     {
       get { return _ItemsSource; }
       set
@@ -23,13 +23,29 @@ namespace DataGridPrintTest
 
     #endregion ItemsSource
 
+    #region SelectedItem
+
+    private Item _SelectedItem;
+
+    public Item SelectedItem
+    {
+      get { return _SelectedItem; }
+      set
+      {
+        _SelectedItem = value;
+        RaisePropertyChanged("SelectedItem");
+      }
+    }
+
+    #endregion SelectedItem
+
     public void Loaded()
     {
       var rmd = new Random();
 
       var items = new List<Item>();
 
-      foreach (var i in Enumerable.Range(1, 111))
+      foreach (var i in Enumerable.Range(1, 11))
       {
         items.Add(new Item()
           {
@@ -41,6 +57,8 @@ namespace DataGridPrintTest
       }
 
       ItemsSource = items;
+
+      SelectedItem = ItemsSource[0];
     }
 
     public event PropertyChangedEventHandler PropertyChanged;

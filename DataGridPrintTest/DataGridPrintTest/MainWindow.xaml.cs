@@ -23,6 +23,13 @@ namespace DataGridPrintTest
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
+      var a = true;
+
+      if (a)
+      {
+        return;
+      }
+
       System.Windows.Controls.PrintDialog Printdlg = new System.Windows.Controls.PrintDialog();
       if ((bool)Printdlg.ShowDialog().GetValueOrDefault())
       {
