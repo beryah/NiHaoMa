@@ -93,7 +93,7 @@
               <Trigger Property="DataGridCell.IsSelected" Value="True">
                 <Setter Property="Background" Value="#3398FC" />
                 <Setter Property="Foreground" Value="White" />
-                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderBrush" Value="Black" />
               </Trigger>
             </Style.Triggers>
           </Style>
@@ -112,6 +112,9 @@
           <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
           <DataGridTextColumn Header="Amt" Binding="{Binding Amt, StringFormat=0.00}" />
           <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=yyyy/MM/dd}" />
+          <DataGridTextColumn Header="Detail_0" Binding="{Binding Details[0].Code}" />
+          <DataGridTextColumn Header="Detail_1" Binding="{Binding Details[1].Code}" />
+          <DataGridTextColumn Header="Detail_2" Binding="{Binding Details[2].Code}" />
         </DataGrid.Columns>
       </DataGrid>
     </ScrollViewer>

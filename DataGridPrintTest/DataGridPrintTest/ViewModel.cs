@@ -47,13 +47,20 @@ namespace DataGridPrintTest
 
       foreach (var i in Enumerable.Range(1, 11))
       {
-        items.Add(new Item()
+        var item = new Item()
           {
             ID = i,
             Name = string.Format("Name_{0}", i.ToString().PadLeft(5, '0')),
             Amt = (decimal)(rmd.Next(2000, 50000) * rmd.NextDouble()),
             Date = new DateTime(rmd.Next(1992, 2054), rmd.Next(1, 13), rmd.Next(1, 29)),
-          });
+          };
+
+        item.Details = new Dictionary<string, Detail>();
+        item.Details.Add("0", new Detail() { Code = "000", });
+        item.Details.Add("1", new Detail() { Code = "111", });
+        item.Details.Add("2", new Detail() { Code = "222", });
+
+        items.Add(item);
       }
 
       ItemsSource = items;
@@ -81,5 +88,12 @@ namespace DataGridPrintTest
     public decimal Amt { get; set; }
 
     public DateTime Date { get; set; }
+
+    public Dictionary<string, Detail> Details { get; set; }
+  }
+
+  public class Detail
+  {
+    public string Code { get; set; }
   }
 }
